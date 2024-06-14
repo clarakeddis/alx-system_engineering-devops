@@ -1,2 +1,2 @@
 #!/bin/bash
-(ls -a1 | sort -V | awk 'BEGIN{ORS=", "} {if ($0=="." || $0=="..") print; else print $0} END{print "\n"}' | sed 's/, $/\n/' | sed 's/\([^,]*, [^,]*,\)/\1\n/')
+(ls -a1 | LC_COLLATE=C sort | awk 'BEGIN{ORS=", "} {if ($0=="." || $0=="..") print $0"/"; else if (system("[ -d \"" $0 "\" ]") == 0) print $0"/"; else print $0} END{print ""}' | sed 's/, $/\n/')
