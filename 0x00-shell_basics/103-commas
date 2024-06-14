@@ -1,0 +1,2 @@
+#!/bin/bash
+ls -a1 | sort -V | awk 'BEGIN { ORS=", " }; { if ($0 == "." || $0 == "..") { print $0 "/" } else if (system("[ -d \""$0"\" ]") == 0) { print $0 "/" } else { print $0 } }' | sed 's/, $/\n/'
