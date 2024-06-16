@@ -1,3 +1,2 @@
 #!/bin/bash
-
-echo "Best School" | sort > '*\'"Best School"\'\*$?*****:)'
+echo "Best School" | sort > '*\'"Best School"\'\*$?*****:)/'
