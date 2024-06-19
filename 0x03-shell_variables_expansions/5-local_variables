@@ -1,2 +1,2 @@
 #!/bin/bash
-{ declare -p; printenv; declare -F; }
+compgen -v | sort; compgen -e | sort; compgen -A function | sort
